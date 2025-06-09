@@ -1,0 +1,66 @@
+<ion-header *ngIf="showMenu">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button> 
+    </ion-buttons>
+    <ion-title>Mi Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Agregar Mascota</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="form-container">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Registrar Mascota</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Nombre</ion-label>
+          <ion-input [(ngModel)]="newPet.name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Tipo</ion-label>
+          <ion-select [(ngModel)]="newPet.type">
+            <ion-select-option value="Perro">Perro</ion-select-option>
+            <ion-select-option value="Gato">Gato</ion-select-option>
+            <ion-select-option value="Conejo">Conejo</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Edad</ion-label>
+          <ion-input type="number" [(ngModel)]="newPet.age"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Peso (kg)</ion-label>
+          <ion-input type="number" [(ngModel)]="newPet.weight"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Vacunas</ion-label>
+          <ion-select [(ngModel)]="newPet.vaccines" multiple="true">
+            <ion-select-option value="Rabia">Rabia</ion-select-option>
+            <ion-select-option value="Distemper">Distemper</ion-select-option>
+            <ion-select-option value="Parvovirus">Parvovirus</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Historial Clínico</ion-label>
+          <ion-textarea [(ngModel)]="newPet.history"></ion-textarea>
+        </ion-item>
+      </ion-list>
+
+      <ion-button expand="full" (click)="savePet()">Guardar Mascota</ion-button>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

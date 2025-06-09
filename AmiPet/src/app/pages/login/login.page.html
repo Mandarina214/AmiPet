@@ -1,0 +1,27 @@
+
+ <ion-content class="login-container">
+  <ion-title class="welcome-title">Bienvenidos a AmiPets</ion-title>
+ 
+ <ion-content class="login-container">
+    <img src="assets/logo.png" class="login-bg">
+  <div class="login-form">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Iniciar sesión</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input [(ngModel)]="user.email" type="email"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Contraseña</ion-label>
+          <ion-input [(ngModel)]="user.password" type="password"></ion-input> 
+       </ion-item>
+        <ion-button expand="full" (click)="loginUser()">Entrar</ion-button> 
+        <ion-button expand="full"  routerLink="/register">Regístrate</ion-button>
+      </ion-card-content>
+    </ion-card>
+  </div>
+</ion-content>

@@ -1,0 +1,75 @@
+<ion-header *ngIf="showMenu">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button> 
+    </ion-buttons>
+    <ion-title>Mi Perfil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="profile-container">
+  <div class="profile-header">
+    <ion-avatar>
+    </ion-avatar>
+    <h2>{{ pet.name || 'Perfil de mi Mascota' }}</h2>
+  </div>
+  <ion-card class="profile-card">
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label position="stacked">Nombre</ion-label>
+          <ion-input [(ngModel)]="pet.name"></ion-input>
+          <ion-label position="stacked">Tipo</ion-label>
+          <ion-select [(ngModel)]="pet.type">
+            <ion-select-option value="Perro">Perro</ion-select-option>
+            <ion-select-option value="Gato">Gato</ion-select-option>
+            <ion-select-option value="Conejo">Conejo</ion-select-option>
+            <ion-select-option value="Caballo">Caballo</ion-select-option>
+            <ion-select-option value="Vaca">Vaca</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+  <ion-label position="stacked">Fecha de nacimiento</ion-label>
+  <ion-input [(ngModel)]="pet.birthDate" type="date"></ion-input>
+</ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Peso (kg)</ion-label>
+          <ion-input type="number" [(ngModel)]="pet.weight"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Edad</ion-label>
+          <ion-input type="number" [(ngModel)]="pet.age"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Raza</ion-label>
+          <ion-input [(ngModel)]="pet.breed"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Vacunas</ion-label>
+          <ion-select [(ngModel)]="pet.vaccines" multiple="true">
+            <ion-select-option value="Rabia">Rabia</ion-select-option>
+            <ion-select-option value="Distemper">Distemper</ion-select-option>
+            <ion-select-option value="Parvovirus">Parvovirus</ion-select-option>
+            <ion-select-option value="Leptospirosis">Leptospirosis</ion-select-option>
+            <ion-select-option value="Hepatitis">Hepatitis</ion-select-option>
+            <ion-select-option value="Tétanos">Tétanos</ion-select-option>
+            <ion-select-option value="Influenza">Influenza</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="stacked">Historial</ion-label>
+          <ion-textarea [(ngModel)]="pet.history"></ion-textarea>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="full" (click)="updatePetProfile()">Guardar Perfil</ion-button>
+  <ion-button expand="full" fill="outline" (click)="clearForm()">Agregar Otra Mascota</ion-button>
+</ion-content>
